@@ -1,3 +1,0 @@
-sharemydocs_platform_homepage:
-    path:     /
-    defaults: { _controller: ShareMyDocsPlatformBundle:Platform:home }

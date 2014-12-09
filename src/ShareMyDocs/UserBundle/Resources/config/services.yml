@@ -1,7 +1,0 @@
-parameters:
-#    share_my_docs_user.example.class: ShareMyDocs\UserBundle\Example
-
-services:
-#    share_my_docs_user.example:
-#        class: %share_my_docs_user.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
