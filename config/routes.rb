@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     post 'login' => 'devise/sessions#create', as: :user_session
     delete 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
   end
-  root 'authentication#login'
+  root 'platform#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
