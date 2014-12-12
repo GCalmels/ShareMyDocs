@@ -21,7 +21,7 @@ authorizations: &AUTHORIZATIONS
 ## Environment
 
 development:
-  host: 192.168.8.250
+  host: 161.3.188.104
   port: 389
   attribute: cn
   base: ou=person,dc=tse,dc=fr
