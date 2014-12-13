@@ -117,3 +117,79 @@ body > .container {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+/* Home Page CSS
+-------------------------------------------------- */
+
+.arrow-box { 
+  position: relative; 
+  background: #88b7d5; 
+  border: 4px solid #c2e1f5;
+  width: 20%;
+  height: 80px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 72px;
+  font-size: 27px;
+} 
+
+.arrow-box:after, .arrow-box:before { 
+  left: 100%; top: 50%; 
+  border: solid transparent; 
+  content: " "; 
+  height: 0; 
+  width: 0; 
+  position: absolute; 
+  pointer-events: none; 
+} 
+
+.arrow-box:after { 
+  border-color: rgba(136, 183, 213, 0); 
+  border-left-color: #88b7d5; 
+  border-width: 36px; 
+  margin-top: -36px; 
+} 
+
+.arrow-box:before { 
+  border-color: rgba(194, 225, 245, 0); 
+  border-left-color: #c2e1f5; 
+  border-width: 42px; 
+  margin-top: -42px; 
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.z-index-2 {
+  z-index: 2;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-0 {
+  z-index: 0;
+}
+
+.left-10px {
+  left: -10px;
+}
+
+.left-20px {
+  left: -20px;
+}
+
+.arrow-box a {
+  text-decoration: none;
+  color: #4D4D4D;
+}
+
+.arrow-box a:hover {
+  color: black;
+}
