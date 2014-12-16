@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'documents', to: 'documents#index'
   get 'documents/new', to: 'documents#new'
 
+  get 'profile', to: 'users#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

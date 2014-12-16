@@ -8,6 +8,4 @@ class User < ActiveRecord::Base
   belongs_to :parcours
   belongs_to :option
   belongs_to :lv2
-
-  validates :admin, presence: true
 end

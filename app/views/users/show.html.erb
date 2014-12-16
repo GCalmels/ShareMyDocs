@@ -1,0 +1,45 @@
+<div class="columns">
+	<div class="column one-fourth" role="navigation">
+		<nav class="menu">
+			<h3 class="menu-heading">
+				Personal settings
+			</h3>
+			<%= link_to "Profile", '#', class: "selected js-selected-navigation-item menu-item" %>
+			<%= link_to "Edit", '#', class: "js-selected-navigation-item menu-item" %>
+			<%= link_to "MyDocs", '#', class: "js-selected-navigation-item menu-item" %>
+			<%= link_to "MyStats", '#', class: "js-selected-navigation-item menu-item" %>
+		</nav>
+	</div>
+
+	<div class="column three-fourths">
+		<div class="boxed-group">
+			<h3>Your profile</h3>
+			<div class="boxed-group-inner clearfix">
+				<div class="column two-thirds">
+					<table>
+						<tr>
+							<td>Login</td>
+							<td><%= current_user.login %></td>
+						</tr>
+						<tr>
+							<td>Filiere</td>
+							<td>TODO</td>
+						</tr>
+						<tr>
+							<td>Parcours</td>
+							<td>TODO</td>
+						</tr>
+						<tr>
+							<td>Options</td>
+							<td>TODO</td>
+						</tr>
+						<tr>
+							<td>LV2</td>
+							<td>TODO</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
