@@ -1,0 +1,11 @@
+<div class="column one-fourth" role="navigation">
+	<nav class="menu">
+		<h3 class="menu-heading">
+			Personal settings
+		</h3>
+		<%= link_to "Profile", profile_path, class: (params[:action] == 'show' && params[:controller] == 'users' ? "js-selected-navigation-item menu-item selected" : "js-selected-navigation-item menu-item") %>
+		<%= link_to "Edit", profile_edit_path, class: (params[:action] == 'edit' && params[:controller] == 'users' ? "js-selected-navigation-item menu-item selected" : "js-selected-navigation-item menu-item") %>
+		<%= link_to "MyDocs", '#', class: (params[:action] == 'mydocs' && params[:controller] == 'users' ? "js-selected-navigation-item menu-item selected" : "js-selected-navigation-item menu-item") %>
+		<%= link_to "MyStats", '#', class: (params[:action] == 'mystats' && params[:controller] == 'users' ? "js-selected-navigation-item menu-item selected" : "js-selected-navigation-item menu-item") %>
+	</nav>
+</div>

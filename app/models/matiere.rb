@@ -4,6 +4,6 @@ class Matiere < ActiveRecord::Base
 	belongs_to :lv2
 	has_many :documents
 
-	validates :nom, presence: true, uniqueness: { case_sensitive: false }
+	validates :nom, presence: true
 	validates :bloc, presence: true
 end

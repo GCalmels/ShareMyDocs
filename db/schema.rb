@@ -28,8 +28,6 @@ ActiveRecord::Schema.define(version: 20141215120925) do
     t.string   "nom"
   end
 
-  add_index "blocs", ["nom"], name: "index_blocs_on_nom", unique: true
-
   create_table "documents", force: true do |t|
     t.integer  "user_id"
     t.integer  "matiere_id"
@@ -67,16 +65,12 @@ ActiveRecord::Schema.define(version: 20141215120925) do
     t.string   "nom"
   end
 
-  add_index "matieres", ["nom"], name: "index_matieres_on_nom", unique: true
-
   create_table "options", force: true do |t|
     t.integer  "semestre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "nom"
   end
-
-  add_index "options", ["nom"], name: "index_options_on_nom", unique: true
 
   create_table "parcours", force: true do |t|
     t.datetime "created_at"

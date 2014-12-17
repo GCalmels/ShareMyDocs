@@ -5,7 +5,7 @@ class Bloc < ActiveRecord::Base
 	has_many :bloc_parcours
 	has_many :parcours, through: :bloc_parcours
 
-	validates :nom, presence: true, uniqueness: { case_sensitive: false }
+	validates :nom, presence: true
 	validates :semestre, presence: true
 	validates :filiere, presence: true
 end

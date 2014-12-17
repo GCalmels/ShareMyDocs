@@ -315,7 +315,6 @@ body > .container {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   color: #666;
-  font-size: 13px;
 }
 
 .clearfix:after {
@@ -337,4 +336,30 @@ body > .container {
   width: 20%;
   height: 40px;
   font-size: 13px;
+}
+
+dl.user-edit-form {
+  margin: 15px 0px;
+}
+
+dl.user-edit-form > dt {
+  margin: 0px 0px 6px;
+}
+
+dl.user-edit-form > dt label {
+  position: relative;
+}
+
+label {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: bold;
 }

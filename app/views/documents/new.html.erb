@@ -1,1 +1,12 @@
+<% provide(:title, 'Upload') %>
+
 <h1>New Document</h1>
+<%= form_for(@document, url: documents_new_path, html: {class: "", role: "form"}) do |f| %>
+	<%= f.label :matiere %>
+	<%= f.select(:matiere_id, [['matiere1', 1], ['matiere2', 2]], {}, {class: "form-control", required: true}) %>
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+	<%= file_field :document, 'file' %>
+
+	<%= f.submit "Upload", class: "btn btn-lg btn-primary btn-block" %>
+<% end %>

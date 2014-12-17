@@ -1,15 +1,7 @@
+<% provide(:title, 'Profile') %>
+
 <div class="columns">
-	<div class="column one-fourth" role="navigation">
-		<nav class="menu">
-			<h3 class="menu-heading">
-				Personal settings
-			</h3>
-			<%= link_to "Profile", '#', class: "selected js-selected-navigation-item menu-item" %>
-			<%= link_to "Edit", '#', class: "js-selected-navigation-item menu-item" %>
-			<%= link_to "MyDocs", '#', class: "js-selected-navigation-item menu-item" %>
-			<%= link_to "MyStats", '#', class: "js-selected-navigation-item menu-item" %>
-		</nav>
-	</div>
+	<%= render "menu" %>
 
 	<div class="column three-fourths">
 		<div class="boxed-group">
@@ -18,24 +10,40 @@
 				<div class="column two-thirds">
 					<table>
 						<tr>
-							<td>Login</td>
+							<td class="title">Login</td>
 							<td><%= current_user.login %></td>
 						</tr>
 						<tr>
-							<td>Filiere</td>
-							<td>TODO</td>
+							<td class="title">Filiere</td>
+							<% if current_user.filiere != nil %>
+							<td><%= current_user.filiere.nom %></td>
+							<% else %>
+							<td>NA</td>
+							<% end %>
 						</tr>
 						<tr>
-							<td>Parcours</td>
-							<td>TODO</td>
+							<td class="title">Parcours</td>
+							<% if current_user.parcours != nil %>
+							<td><%= current_user.parcours.nom %></td>
+							<% else %>
+							<td>NA</td>
+							<% end %>
 						</tr>
 						<tr>
-							<td>Options</td>
-							<td>TODO</td>
+							<td class="title">Options</td>
+							<% if current_user.option != nil %>
+							<td><%= current_user.option.nom %></td>
+							<% else %>
+							<td>NA</td>
+							<% end %>
 						</tr>
 						<tr>
-							<td>LV2</td>
-							<td>TODO</td>
+							<td class="title">LV2</td>
+							<% if current_user.lv2 != nil %>
+							<td><%= current_user.lv2.nom %></td>
+							<% else %>
+							<td>NA</td>
+							<% end %>
 						</tr>
 					</table>
 				</div>
