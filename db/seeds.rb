@@ -90,8 +90,8 @@ bloc34 = Bloc.create nom: 'Optimisation et traitement du signal avancé', filier
 bloc35 = Bloc.create nom: 'Langues vivantes', filiere: fi2, semestre: s7
 bloc36 = Bloc.create nom: 'Systèmes embarqués', filiere: fi2, semestre: s7
 bloc37 = Bloc.create nom: 'Ingénierie de la vision', filiere: fi2, semestre: s7
-bloc38 = Bloc.create nom: 'Développement d’Applications Informatiques', filiere: fi2, semestre: s7
-bloc39 = Bloc.create nom: 'Analyse d’images', filiere: fi2, semestre: s7
+bloc38 = Bloc.create nom: "Développement d'Applications Informatiques", filiere: fi2, semestre: s7
+bloc39 = Bloc.create nom: "Analyse d'images", filiere: fi2, semestre: s7
 bloc40 = Bloc.create nom: 'Systèmes optiques', filiere: fi2, semestre: s7
 bloc41 = Bloc.create nom: 'Codage et transmission', filiere: fi2, semestre: s7
 
@@ -99,7 +99,7 @@ bloc42 = Bloc.create nom: 'Ingénieur, entreprise et société', filiere: fi2, s
 bloc43 = Bloc.create nom: 'Langues vivantes', filiere: fi2, semestre: s8
 bloc44 = Bloc.create nom: 'Projet industriel', filiere: fi2, semestre: s8
 bloc45 = Bloc.create nom: 'Composants, signaux, systèmes', filiere: fi2, semestre: s8
-bloc46 = Bloc.create nom: 'De l’image à l’information', filiere: fi2, semestre: s8
+bloc46 = Bloc.create nom: "De l'image à l’information", filiere: fi2, semestre: s8
 bloc47 = Bloc.create nom: 'Réseaux : Commutation et Routage', filiere: fi2, semestre: s8
 bloc48 = Bloc.create nom: 'Laser et Applications Photoniques', filiere: fi2, semestre: s8
 bloc49 = Bloc.create nom: 'Protocoles et Services Télécoms', filiere: fi2, semestre: s8
@@ -108,7 +108,7 @@ bloc51 = Bloc.create nom: 'Option', filiere: fi2, semestre: s8
 
 bloc52 = Bloc.create nom: 'Ingénieur, entreprise et société', filiere: fi3, semestre: s9
 bloc53 = Bloc.create nom: 'Optoélectrique', filiere: fi3, semestre: s9
-bloc54 = Bloc.create nom: 'Concéption de systèmes numériques', filiere: fi3, semestre: s9
+bloc54 = Bloc.create nom: 'Conception de systèmes numériques', filiere: fi3, semestre: s9
 bloc55 = Bloc.create nom: 'Contenus numériques multimédia', filiere: fi3, semestre: s9
 bloc56 = Bloc.create nom: 'Informatique Distribuée', filiere: fi3, semestre: s9
 bloc57 = Bloc.create nom: "Services Réseaux d'entreprises", filiere: fi3, semestre: s9
@@ -184,74 +184,74 @@ option24 = Option.create nom: 'Antennes et liaisons hertziennes', semestre: s9
 
 #lv2_1 = Lv2.create nom: '', niveau: ''
 
-# Creation des bloc_parcours
+# Creation des bloc_parcours_associations
 
-bloc_parcours1 = BlocParcours.create bloc: bloc36, parcours: parcours1
-bloc_parcours2 = BlocParcours.create bloc: bloc40, parcours: parcours1
-bloc_parcours3 = BlocParcours.create bloc: bloc45, parcours: parcours1
-bloc_parcours4 = BlocParcours.create bloc: bloc48, parcours: parcours1
-bloc_parcours5 = BlocParcours.create bloc: bloc53, parcours: parcours1
-bloc_parcours6 = BlocParcours.create bloc: bloc58, parcours: parcours1
+bloc_parcours1 = BlocParcoursAssociation.create bloc: bloc36, parcours: parcours1
+bloc_parcours2 = BlocParcoursAssociation.create bloc: bloc40, parcours: parcours1
+bloc_parcours3 = BlocParcoursAssociation.create bloc: bloc45, parcours: parcours1
+bloc_parcours4 = BlocParcoursAssociation.create bloc: bloc48, parcours: parcours1
+bloc_parcours5 = BlocParcoursAssociation.create bloc: bloc53, parcours: parcours1
+bloc_parcours6 = BlocParcoursAssociation.create bloc: bloc58, parcours: parcours1
 
-bloc_parcours7 = BlocParcours.create bloc: bloc36, parcours: parcours2
-bloc_parcours8 = BlocParcours.create bloc: bloc40, parcours: parcours2
-bloc_parcours9 = BlocParcours.create bloc: bloc45, parcours: parcours2
-bloc_parcours10 = BlocParcours.create bloc: bloc49, parcours: parcours2
-bloc_parcours11 = BlocParcours.create bloc: bloc53, parcours: parcours2
-bloc_parcours12 = BlocParcours.create bloc: bloc58, parcours: parcours2
-bloc_parcours13 = BlocParcours.create bloc: bloc59, parcours: parcours2
+bloc_parcours7 = BlocParcoursAssociation.create bloc: bloc36, parcours: parcours2
+bloc_parcours8 = BlocParcoursAssociation.create bloc: bloc40, parcours: parcours2
+bloc_parcours9 = BlocParcoursAssociation.create bloc: bloc45, parcours: parcours2
+bloc_parcours10 = BlocParcoursAssociation.create bloc: bloc49, parcours: parcours2
+bloc_parcours11 = BlocParcoursAssociation.create bloc: bloc53, parcours: parcours2
+bloc_parcours12 = BlocParcoursAssociation.create bloc: bloc58, parcours: parcours2
+bloc_parcours13 = BlocParcoursAssociation.create bloc: bloc59, parcours: parcours2
 
-bloc_parcours14 = BlocParcours.create bloc: bloc36, parcours: parcours3
-bloc_parcours15 = BlocParcours.create bloc: bloc41, parcours: parcours3
-bloc_parcours16 = BlocParcours.create bloc: bloc45, parcours: parcours3
-bloc_parcours17 = BlocParcours.create bloc: bloc49, parcours: parcours3
-bloc_parcours18 = BlocParcours.create bloc: bloc54, parcours: parcours3
-bloc_parcours19 = BlocParcours.create bloc: bloc58, parcours: parcours3
-bloc_parcours20 = BlocParcours.create bloc: bloc59, parcours: parcours3
+bloc_parcours14 = BlocParcoursAssociation.create bloc: bloc36, parcours: parcours3
+bloc_parcours15 = BlocParcoursAssociation.create bloc: bloc41, parcours: parcours3
+bloc_parcours16 = BlocParcoursAssociation.create bloc: bloc45, parcours: parcours3
+bloc_parcours17 = BlocParcoursAssociation.create bloc: bloc49, parcours: parcours3
+bloc_parcours18 = BlocParcoursAssociation.create bloc: bloc54, parcours: parcours3
+bloc_parcours19 = BlocParcoursAssociation.create bloc: bloc58, parcours: parcours3
+bloc_parcours20 = BlocParcoursAssociation.create bloc: bloc59, parcours: parcours3
 
-bloc_parcours21 = BlocParcours.create bloc: bloc36, parcours: parcours4
-bloc_parcours22 = BlocParcours.create bloc: bloc39, parcours: parcours4
-bloc_parcours23 = BlocParcours.create bloc: bloc46, parcours: parcours4
-bloc_parcours24 = BlocParcours.create bloc: bloc50, parcours: parcours4
-bloc_parcours25 = BlocParcours.create bloc: bloc55, parcours: parcours4
-bloc_parcours26 = BlocParcours.create bloc: bloc58, parcours: parcours4
+bloc_parcours21 = BlocParcoursAssociation.create bloc: bloc36, parcours: parcours4
+bloc_parcours22 = BlocParcoursAssociation.create bloc: bloc39, parcours: parcours4
+bloc_parcours23 = BlocParcoursAssociation.create bloc: bloc46, parcours: parcours4
+bloc_parcours24 = BlocParcoursAssociation.create bloc: bloc50, parcours: parcours4
+bloc_parcours25 = BlocParcoursAssociation.create bloc: bloc55, parcours: parcours4
+bloc_parcours26 = BlocParcoursAssociation.create bloc: bloc58, parcours: parcours4
 
-bloc_parcours27 = BlocParcours.create bloc: bloc37, parcours: parcours5
-bloc_parcours28 = BlocParcours.create bloc: bloc40, parcours: parcours5
-bloc_parcours29 = BlocParcours.create bloc: bloc46, parcours: parcours5
-bloc_parcours30 = BlocParcours.create bloc: bloc48, parcours: parcours5
-bloc_parcours31 = BlocParcours.create bloc: bloc53, parcours: parcours5
-bloc_parcours32 = BlocParcours.create bloc: bloc60, parcours: parcours5
+bloc_parcours27 = BlocParcoursAssociation.create bloc: bloc37, parcours: parcours5
+bloc_parcours28 = BlocParcoursAssociation.create bloc: bloc40, parcours: parcours5
+bloc_parcours29 = BlocParcoursAssociation.create bloc: bloc46, parcours: parcours5
+bloc_parcours30 = BlocParcoursAssociation.create bloc: bloc48, parcours: parcours5
+bloc_parcours31 = BlocParcoursAssociation.create bloc: bloc53, parcours: parcours5
+bloc_parcours32 = BlocParcoursAssociation.create bloc: bloc60, parcours: parcours5
 
-bloc_parcours33 = BlocParcours.create bloc: bloc37, parcours: parcours6
-bloc_parcours34 = BlocParcours.create bloc: bloc39, parcours: parcours6
-bloc_parcours35 = BlocParcours.create bloc: bloc46, parcours: parcours6
-bloc_parcours36 = BlocParcours.create bloc: bloc50, parcours: parcours6
-bloc_parcours37 = BlocParcours.create bloc: bloc55, parcours: parcours6
-bloc_parcours38 = BlocParcours.create bloc: bloc60, parcours: parcours6
+bloc_parcours33 = BlocParcoursAssociation.create bloc: bloc37, parcours: parcours6
+bloc_parcours34 = BlocParcoursAssociation.create bloc: bloc39, parcours: parcours6
+bloc_parcours35 = BlocParcoursAssociation.create bloc: bloc46, parcours: parcours6
+bloc_parcours36 = BlocParcoursAssociation.create bloc: bloc50, parcours: parcours6
+bloc_parcours37 = BlocParcoursAssociation.create bloc: bloc55, parcours: parcours6
+bloc_parcours38 = BlocParcoursAssociation.create bloc: bloc60, parcours: parcours6
 
-bloc_parcours39 = BlocParcours.create bloc: bloc38, parcours: parcours7
-bloc_parcours40 = BlocParcours.create bloc: bloc39, parcours: parcours7
-bloc_parcours41 = BlocParcours.create bloc: bloc46, parcours: parcours7
-bloc_parcours42 = BlocParcours.create bloc: bloc50, parcours: parcours7
-bloc_parcours43 = BlocParcours.create bloc: bloc55, parcours: parcours7
-bloc_parcours44 = BlocParcours.create bloc: bloc56, parcours: parcours7
-bloc_parcours45 = BlocParcours.create bloc: bloc60, parcours: parcours7
+bloc_parcours39 = BlocParcoursAssociation.create bloc: bloc38, parcours: parcours7
+bloc_parcours40 = BlocParcoursAssociation.create bloc: bloc39, parcours: parcours7
+bloc_parcours41 = BlocParcoursAssociation.create bloc: bloc46, parcours: parcours7
+bloc_parcours42 = BlocParcoursAssociation.create bloc: bloc50, parcours: parcours7
+bloc_parcours43 = BlocParcoursAssociation.create bloc: bloc55, parcours: parcours7
+bloc_parcours44 = BlocParcoursAssociation.create bloc: bloc56, parcours: parcours7
+bloc_parcours45 = BlocParcoursAssociation.create bloc: bloc60, parcours: parcours7
 
-bloc_parcours46 = BlocParcours.create bloc: bloc38, parcours: parcours8
-bloc_parcours47 = BlocParcours.create bloc: bloc41, parcours: parcours8
-bloc_parcours48 = BlocParcours.create bloc: bloc47, parcours: parcours8
-bloc_parcours49 = BlocParcours.create bloc: bloc49, parcours: parcours8
-bloc_parcours50 = BlocParcours.create bloc: bloc57, parcours: parcours8
-bloc_parcours51 = BlocParcours.create bloc: bloc59, parcours: parcours8
-bloc_parcours52 = BlocParcours.create bloc: bloc61, parcours: parcours8
+bloc_parcours46 = BlocParcoursAssociation.create bloc: bloc38, parcours: parcours8
+bloc_parcours47 = BlocParcoursAssociation.create bloc: bloc41, parcours: parcours8
+bloc_parcours48 = BlocParcoursAssociation.create bloc: bloc47, parcours: parcours8
+bloc_parcours49 = BlocParcoursAssociation.create bloc: bloc49, parcours: parcours8
+bloc_parcours50 = BlocParcoursAssociation.create bloc: bloc57, parcours: parcours8
+bloc_parcours51 = BlocParcoursAssociation.create bloc: bloc59, parcours: parcours8
+bloc_parcours52 = BlocParcoursAssociation.create bloc: bloc61, parcours: parcours8
 
-bloc_parcours53 = BlocParcours.create bloc: bloc38, parcours: parcours9
-bloc_parcours54 = BlocParcours.create bloc: bloc41, parcours: parcours9
-bloc_parcours55 = BlocParcours.create bloc: bloc47, parcours: parcours9
-bloc_parcours56 = BlocParcours.create bloc: bloc50, parcours: parcours9
-bloc_parcours57 = BlocParcours.create bloc: bloc56, parcours: parcours9
-bloc_parcours58 = BlocParcours.create bloc: bloc61, parcours: parcours9
+bloc_parcours53 = BlocParcoursAssociation.create bloc: bloc38, parcours: parcours9
+bloc_parcours54 = BlocParcoursAssociation.create bloc: bloc41, parcours: parcours9
+bloc_parcours55 = BlocParcoursAssociation.create bloc: bloc47, parcours: parcours9
+bloc_parcours56 = BlocParcoursAssociation.create bloc: bloc50, parcours: parcours9
+bloc_parcours57 = BlocParcoursAssociation.create bloc: bloc56, parcours: parcours9
+bloc_parcours58 = BlocParcoursAssociation.create bloc: bloc61, parcours: parcours9
 
 # Creation des matieres
 
@@ -331,7 +331,7 @@ matiere53 = Matiere.create nom: 'Stage', bloc: bloc21
 
 matiere54 = Matiere.create nom: 'Base indispensable des mathématiques', bloc: bloc22
 matiere55 = Matiere.create nom: 'Electrostatique, Magnétostatique', bloc: bloc22
-matiere56 = Matiere.create nom: 'Base de l''algorithmique et de la programmation', bloc: bloc22
+matiere56 = Matiere.create nom: "Base de l'algorithmique et de la programmation", bloc: bloc22
 matiere57 = Matiere.create nom: 'Electronique et mesure', bloc: bloc22
 
 matiere58 = Matiere.create nom: 'Mathématiques des signaux et des systèmes', bloc: bloc23
@@ -342,7 +342,7 @@ matiere61 = Matiere.create nom: 'Electromagnétisme', bloc: bloc23
 matiere62 = Matiere.create nom: 'Système de traitement électronique', bloc: bloc24
 matiere63 = Matiere.create nom: "Travaux pratiques d'électronique", bloc: bloc24
 matiere64 = Matiere.create nom: 'Algorithmique et structures de données', bloc: bloc24
-matiere65 = Matiere.create nom: 'Architecture des ordinateurs et systèmes d''exploitation', bloc: bloc24
+matiere65 = Matiere.create nom: "Architecture des ordinateurs et systèmes d'exploitation", bloc: bloc24
 
 matiere66 = Matiere.create nom: 'Anglais', bloc: bloc25
 matiere67 = Matiere.create nom: 'Langue vivante 2', bloc: bloc25
@@ -420,7 +420,7 @@ matiere122 = Matiere.create nom: 'Supports de transmission cuivre', bloc: bloc41
 matiere123 = Matiere.create nom: 'Travaux pratiques', bloc: bloc41
 
 matiere124 = Matiere.create nom: 'Analyse financière', bloc: bloc42
-matiere125 = Matiere.create nom: 'Economie et management de l''innovation', bloc: bloc42
+matiere125 = Matiere.create nom: "Economie et management de l'innovation", bloc: bloc42
 matiere126 = Matiere.create nom: 'Marketing', bloc: bloc42
 matiere127 = Matiere.create nom: "Plan d'affaires", bloc: bloc42
 matiere128 = Matiere.create nom: "Ethique de l'ingénieur", bloc: bloc42
@@ -466,8 +466,8 @@ matiere156 = Matiere.create nom: 'Administration de réseaux', bloc: bloc51, opt
 matiere157 = Matiere.create nom: 'Configuration de Serveurs', bloc: bloc51, option: option5
 
 matiere158 = Matiere.create nom: 'Compression de données', bloc: bloc51, option: option6
-matiere159 = Matiere.create nom: "Protection de l’information", bloc: bloc51, option: option6
-matiere160 = Matiere.create nom: "Codage d’erreur et Transmission Numérique", bloc: bloc51, option: option6
+matiere159 = Matiere.create nom: "Protection de l'information", bloc: bloc51, option: option6
+matiere160 = Matiere.create nom: "Codage d'erreur et Transmission Numérique", bloc: bloc51, option: option6
 
 matiere161 = Matiere.create nom: "Circuits logiques programmables pour l'image", bloc: bloc51, option: option3
 matiere162 = Matiere.create nom: "Processeurs graphiques pour le traitement d'image", bloc: bloc51, option: option3

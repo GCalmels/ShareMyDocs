@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20141215120925) do
 
-  create_table "bloc_parcours", force: true do |t|
+  create_table "bloc_parcours_associations", force: true do |t|
     t.integer  "bloc_id"
     t.integer  "parcours_id"
     t.datetime "created_at"

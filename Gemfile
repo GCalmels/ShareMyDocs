@@ -10,6 +10,10 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'devise'
 gem 'devise_ldap_authenticatable'
+gem 'therubyracer', platform: :ruby
+gem 'twitter-bootstrap-rails'
+
+gem 'js-routes'
 
 group :production do
   gem 'rails_12factor', '0.0.2'

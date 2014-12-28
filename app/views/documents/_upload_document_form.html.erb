@@ -1,0 +1,22 @@
+<%= form_for(@document, url: documents_new_path, html: {class: "", role: "form"}) do |f| %>
+	<div class="form-group">
+		<%= f.label :matiere %>
+		<%= f.select :matiere_id, [], {}, {class: "form-control", required: true} do %>
+			<%= render 'select_matiere_input' %>
+		<% end %>
+	</div>
+	<div class="form-group">
+		<%= f.label :description %>
+		<%= f.text_area :description, class: "form-control", required: true, maxlength: 500 %>
+	</div>
+	<div class="form-group">
+	    <span class="btn btn-default btn-file btn-lg">
+    		Select File <%= file_field :document, 'file' %>
+    	</span>
+    	<label for="document_file" id="upload-file-label">No file selected.</label>
+	</div>	
+	
+	<div class="text-align-right">
+		<%= f.submit "Upload!", class: "btn btn-lg btn-primary" %>
+	</div>
+<% end %>

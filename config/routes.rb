@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'documents', to: 'documents#index'
   get 'documents/new', to: 'documents#new'
   post 'documents/new', to: 'documents#create'
+  get 'documents/new/select/filiere', to: 'documents#update_blocs', as: 'update_blocs'
 
   get 'profile', to: 'users#show'
   get 'profile/edit', to: 'users#edit'
