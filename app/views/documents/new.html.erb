@@ -8,7 +8,11 @@
 		<form>
 			<div class="form-group">
 				<label for="filieres_select">Filiere</label>
-				<%= collection_select(nil, :filiere_id, @filieres, :id, :nom, {}, {:id => 'filieres_select', :class => 'form-control'}) %>
+				<select class="form-control" id="filieres_select">
+					<% @filieres.each do |filiere| %>
+						<option value="<%= filiere.id %>"><%= filiere.nom %></option>
+					<% end %>
+				</select>
 			</div>
 		</form>
 		

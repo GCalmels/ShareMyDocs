@@ -24,11 +24,15 @@ class DocumentsController < ApplicationController
 	def create
 		@document = Document.new(document_params)
 		@document.user = current_user
-		post = DataFile.save(params[:file])
+		@document.nb_downloads = 0
 		if @document.save			
 			flash[:success] = "The Document has been correctly uploaded"
-			redirect_to 'index'
+			redirect_to documents_path
 		else
+			current_filiere = current_user.filiere
+			@filieres = select_previous_filieres(current_filiere)
+			@blocs = Bloc.where(filiere: current_filiere)
+			@bloc_parcours_associations = BlocParcoursAssociation.where(parcours: current_user.parcours)
 			render 'new'
 		end		
 	end
@@ -36,7 +40,7 @@ class DocumentsController < ApplicationController
 	private
 
 	def document_params
-		params.require(:document).permit(:description, :matiere)
+		params.require(:document).permit(:description, :matiere_id, :file)
 	end
 
 	def select_previous_filieres(current_user_filiere)

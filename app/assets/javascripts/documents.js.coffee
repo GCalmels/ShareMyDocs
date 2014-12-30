@@ -29,7 +29,6 @@ attach_upload_select_file_listener = () ->
 
   		return
 
-
 $(document).on('page:load', attach_upload_select_filiere_listener)
 $(document).on('page:load', attach_upload_select_file_listener)
 initialize = $(document).ready ->

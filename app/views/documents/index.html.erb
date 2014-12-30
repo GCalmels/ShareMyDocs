@@ -3,6 +3,6 @@
 <h1>Documents Index</h1>
 <ul>
 <% @documents.each do |document| %>
-	<li><%= document.nom %></li>
+	<li><%= link_to document.file_file_name, document.file.url %></li>
 <% end %>
 </ul>

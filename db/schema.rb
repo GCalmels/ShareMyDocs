@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215120925) do
+ActiveRecord::Schema.define(version: 20141230124549) do
+
+  create_table "bloc_parcours", force: true do |t|
+    t.integer  "bloc_id"
+    t.integer  "parcours_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "bloc_parcours_associations", force: true do |t|
     t.integer  "bloc_id"
@@ -33,13 +40,13 @@ ActiveRecord::Schema.define(version: 20141215120925) do
     t.integer  "matiere_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "nom"
     t.text     "description"
-    t.string   "url"
     t.integer  "nb_downloads"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
-
-  add_index "documents", ["nom"], name: "index_documents_on_nom", unique: true
 
   create_table "filieres", force: true do |t|
     t.datetime "created_at"

@@ -12,6 +12,7 @@ gem 'devise'
 gem 'devise_ldap_authenticatable'
 gem 'therubyracer', platform: :ruby
 gem 'twitter-bootstrap-rails'
+gem "paperclip", "~> 4.2"
 
 gem 'js-routes'
 
