@@ -2,7 +2,10 @@ class DocumentsController < ApplicationController
 	before_filter :authenticate_user!
 	
 	def index
-		@documents = Document.all
+		@filiere = Filiere.where(id: params[:filiere])
+		@filiere = current_user.filiere unless @filiere != []
+		@blocs = Bloc.where(filiere: @filiere)
+		@bloc_parcours_associations = BlocParcoursAssociation.where(parcours: current_user.parcours)
 	end
 
 	def new

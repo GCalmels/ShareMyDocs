@@ -1,0 +1,15 @@
+<li class="document">
+	<h2>
+		<%= link_to document.file_file_name, document.file.url, target: '_blank' %>
+		<small>Nombre de download : <%= document.nb_downloads %></small>
+	</h2>
+
+	<div class="description">
+		<%= document.description %>
+	</div>
+	<div>
+		<small>
+			<%= document.matiere.bloc.filiere.nom %> - <%= document.matiere.bloc.nom %> - <%= document.matiere.nom %>
+		</small>		
+	</div>
+</li>

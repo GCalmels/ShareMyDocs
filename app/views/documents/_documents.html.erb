@@ -1,0 +1,13 @@
+<div id="documents">
+	<ul class="documents">
+		<% @blocs.each do |bloc| %>
+			<% if !bloc.parcours.any? || @bloc_parcours_associations.find_by(bloc: bloc) != nil %>
+				<% bloc.matieres.each do |matiere| %>
+					<% matiere.documents.each do |document| %>
+						<%= render 'document', document: document %>
+					<% end %>
+				<% end %>
+			<% end %>
+		<% end %>		
+	</ul>
+</div>

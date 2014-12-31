@@ -445,3 +445,45 @@ textarea {
     width: 100%;
   }
 }
+
+/* Document Index Custom CSS
+-------------------------------------------------- */
+
+#documents {
+  margin-bottom: 10px;
+}
+
+.documents {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.document:not(:first-child) {
+  border-top: solid 1px #CCC;
+}
+
+.document {
+  padding: 10px;
+}
+
+.document h2{
+  margin: 0;
+}
+
+.document h2 a {
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.document h2 small {
+  font-size: 10px;
+}
+
+.document .description {
+  border: solid 1px #CCC;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

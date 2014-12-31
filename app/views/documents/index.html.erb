@@ -1,8 +1,26 @@
 <% provide(:title, 'Documents') %>
 
-<h1>Documents Index</h1>
-<ul>
-<% @documents.each do |document| %>
-	<li><%= link_to document.file_file_name, document.file.url %></li>
-<% end %>
-</ul>
+<div class="jumbotron">
+	<div class="search-box">
+		<input type="text" id="search-input"/>
+	</div>
+	<div class="search-filters">
+		<select>
+			<option>FILIERE FILTER</option>
+		</select>
+		<select>
+			<option>Semestre FILTER</option>
+		</select>
+		<select>
+			<option>Bloc FILTER</option>
+		</select>
+		<select>
+			<option>Matiere FILTER</option>
+		</select>
+		<select>
+			<option>TYPE!!!!! FILTER</option>
+		</select>
+	</div>
+</div>
+
+<%= render 'documents' %>
