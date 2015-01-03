@@ -2,6 +2,19 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+attach_documents_search_input_listener = () ->
+        $("#search-input").on 'change', ->
+          $.ajax Routes.update_documents_path(),
+            type: 'GET'
+            data:
+              search_input: $("#search-input").val()
+              filiere_id: $("#search-filiere-select").val()
+              matiere_id: $("#search-matiere-select").val()
+
+            dataType: 'script'
+
+          return
+
 attach_upload_select_filiere_listener = () ->
         $("#filieres_select").on 'change', ->
         	$.ajax Routes.update_blocs_path(),
@@ -31,6 +44,9 @@ attach_upload_select_file_listener = () ->
 
 $(document).on('page:load', attach_upload_select_filiere_listener)
 $(document).on('page:load', attach_upload_select_file_listener)
+$(document).on('page:load', attach_documents_search_input_listener)
+
 initialize = $(document).ready ->
     attach_upload_select_filiere_listener()
     attach_upload_select_file_listener()
+    attach_documents_search_input_listener()

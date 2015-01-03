@@ -1,11 +1,9 @@
 <% @blocs.each do |bloc| %>
-	<% if !bloc.parcours.any? || @bloc_parcours_associations.find_by(bloc: bloc) != nil %>
-		<optgroup label="<%= bloc.nom %> - S<%= bloc.semestre.numero %>">
-		<% bloc.matieres.each do |matiere| %>
-			<% if matiere.option == current_user.option %>
-				<%= content_tag(:option, matiere.nom, value: matiere.id) %>
-			<% end %>
+	<optgroup label="<%= bloc.nom %> - S<%= bloc.semestre.numero %>">
+	<% bloc.matieres.each do |matiere| %>
+		<% if matiere.option == nil || matiere.option == current_user.option %>
+			<%= content_tag(:option, matiere.nom, value: matiere.id) %>
 		<% end %>
-		</optgroup>
 	<% end %>
+	</optgroup>
 <% end %>

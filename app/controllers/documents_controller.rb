@@ -2,26 +2,44 @@ class DocumentsController < ApplicationController
 	before_filter :authenticate_user!
 	
 	def index
-		@filiere = Filiere.where(id: params[:filiere])
-		@filiere = current_user.filiere unless @filiere != []
-		@blocs = Bloc.where(filiere: @filiere)
-		@bloc_parcours_associations = BlocParcoursAssociation.where(parcours: current_user.parcours)
+		@selected_filiere = Filiere.where(id: params[:filiere]).first
+		@selected_filiere = current_user.filiere unless @selected_filiere != nil
+		@filieres = select_previous_filieres(current_user.filiere)
+		@blocs = @selected_filiere.blocs.where('id NOT IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations) 
+											OR id IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations 
+												WHERE parcours_id = ?)', "#{current_user.parcours.id}")
+	end
+
+	def update_documents
+		# updates documents based on search input if any
+		search_input = params[:search_input]		
+		selected_matiere = Matiere.where(id: params[:matiere_id]).first
+		if selected_matiere != nil
+			@documents = Document.where(matiere: selected_matiere).search(search_input)
+		else
+			selected_filiere = Filiere.find(params[:filiere_id])
+			@blocs = selected_filiere.blocs.where('id NOT IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations) 
+											OR id IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations 
+												WHERE parcours_id = ?)', "#{current_user.parcours.id}")
+		end
 	end
 
 	def new
 		@document = Document.new
 		current_filiere = current_user.filiere
 		@filieres = select_previous_filieres(current_filiere)
-		@blocs = Bloc.where(filiere: current_filiere)
-		@bloc_parcours_associations = BlocParcoursAssociation.where(parcours: current_user.parcours)
+		@blocs = current_filiere.blocs.where('id NOT IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations) 
+											OR id IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations 
+												WHERE parcours_id = ?)', "#{current_user.parcours.id}")
 	end
 
 	def update_blocs
-		 # updates matieres based on filiere selected
+		# updates matieres based on filiere selected
 		filiere = Filiere.find(params[:filiere_id])
 		# map to name and id for use in our options_for_select
-		@blocs = Bloc.where(filiere: filiere)
-		@bloc_parcours_associations = BlocParcoursAssociation.where(parcours: current_user.parcours)
+		@blocs = filiere.blocs.where('id NOT IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations) 
+											OR id IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations 
+												WHERE parcours_id = ?)', "#{current_user.parcours.id}")
 	end
 
 	def create
@@ -34,8 +52,9 @@ class DocumentsController < ApplicationController
 		else
 			current_filiere = current_user.filiere
 			@filieres = select_previous_filieres(current_filiere)
-			@blocs = Bloc.where(filiere: current_filiere)
-			@bloc_parcours_associations = BlocParcoursAssociation.where(parcours: current_user.parcours)
+			@blocs = filiere.blocs.where('id NOT IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations) 
+											OR id IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations 
+												WHERE parcours_id = ?)', "#{current_user.parcours.id}")
 			render 'new'
 		end		
 	end
