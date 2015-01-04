@@ -1,5 +1,5 @@
 <ul class="documents">
-	<% if @documents == nil %>
+	<% if @selected_matiere == nil %>
 		<% @blocs.each do |bloc| %>
 			<% bloc.matieres.each do |matiere| %>
 				<% if matiere.option == nil || matiere.option == current_user.option %>
@@ -12,6 +12,10 @@
 			<% end %>
 		<% end %>
 	<% else %>
-		<%= render @documents %>
+		<% @selected_matiere.documents.each do |document| %>
+			<% if document.corresponds_to_user_input(params[:search_input]) %>
+				<%= render 'document', document: document %>
+			<% end %>
+		<% end %>
 	<% end %>
 </ul>

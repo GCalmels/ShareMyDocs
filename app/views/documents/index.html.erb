@@ -3,14 +3,12 @@
 <div class="jumbotron text-align-right">
 	<div class="search-box">
 		<div class="input-group col-md-12">
-			<%= form_tag documents_path, :method => 'get' do %>
-				<%= text_field_tag :search_input, params[:search_input], id: "search-input", class: "search-query form-control", placeholder: "Search" %>
-				<span class="input-group-btn">
-					<button class="btn btn-danger" type="submit">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
-				</span>
-			<% end %>
+			<input type="text" id="search-input" class="search-query form-control" placeholder="Search">
+			<span class="input-group-btn">
+				<button class="btn btn-danger" type="submit">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</span>
 		</div>		
 	</div>
 	<div class="search-filters">
@@ -19,17 +17,8 @@
 				<option value="<%= filiere.id %>" <%= 'selected' if filiere == @selected_filiere %>><%= filiere.nom %></option>
 			<% end %>
 		</select>
-		<select class="form-control" id="search-matiere-select">
-			<option value="" disabled selected>Filtrer par matiere</option>
-			<% @blocs.each do |bloc| %>
-				<optgroup label="<%= bloc.nom %> - S<%= bloc.semestre.numero %>">
-				<% bloc.matieres.each do |matiere| %>
-					<% if matiere.option == nil || matiere.option == current_user.option %>
-						<%= content_tag(:option, matiere.nom, value: matiere.id) %>
-					<% end %>
-				<% end %>
-				</optgroup>
-			<% end %>
+		<select class="form-control" id="search-matiere-select">			
+			<%= render 'select_matiere_input' %>
 		</select>
 	</div>
 </div>

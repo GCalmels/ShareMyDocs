@@ -13,10 +13,8 @@ class DocumentsController < ApplicationController
 	def update_documents
 		# updates documents based on search input if any
 		search_input = params[:search_input]		
-		selected_matiere = Matiere.where(id: params[:matiere_id]).first
-		if selected_matiere != nil
-			@documents = Document.where(matiere: selected_matiere).search(search_input)
-		else
+		@selected_matiere = Matiere.where(id: params[:matiere_id]).first
+		if @selected_matiere == nil
 			selected_filiere = Filiere.find(params[:filiere_id])
 			@blocs = selected_filiere.blocs.where('id NOT IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations) 
 											OR id IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations 

@@ -1,3 +1,4 @@
+<option value="" selected>Sélectionner une matiere</option>
 <% @blocs.each do |bloc| %>
 	<optgroup label="<%= bloc.nom %> - S<%= bloc.semestre.numero %>">
 	<% bloc.matieres.each do |matiere| %>
