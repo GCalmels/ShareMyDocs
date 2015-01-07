@@ -32,10 +32,18 @@ class Document < ActiveRecord::Base
 			search_array = search_input.split
 			result1 = search_array.map{ |o| self.file_file_name.downcase =~ /\b#{Regexp.escape(o)}\b/ }
 			result2 = search_array.map{ |o| self.description.downcase =~ /\b#{Regexp.escape(o)}\b/ }
+			result3 = search_array.map{ |o| self.document_type.nom.downcase =~ /\b#{Regexp.escape(o)}\b/ }
 
 			result = result1
 			i = 0
 			result2.each do |p|
+				if p != nil
+					result[i] = p
+				end
+				i = i+1
+			end
+			i = 0
+			result3.each do |p|
 				if p != nil
 					result[i] = p
 				end
