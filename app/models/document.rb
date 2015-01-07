@@ -1,10 +1,12 @@
 class Document < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :matiere
+	belongs_to :document_type
 
 	validates :matiere, presence: true
 	validates :user, presence: true
 	validates :description, presence: true
+	validates :document_type, presence: true
 
 	has_attached_file :file
 			#:url => "/system/:class/:attachment/:id/:style/:basename.:extension"

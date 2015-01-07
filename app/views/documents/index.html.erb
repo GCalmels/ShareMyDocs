@@ -9,7 +9,7 @@
 					<span class="glyphicon glyphicon-search"></span>
 				</button>
 			</span>
-		</div>		
+		</div>
 	</div>
 	<div class="search-filters">
 		<select class="form-control" id="search-filiere-select">
@@ -20,6 +20,11 @@
 		<select class="form-control" id="search-matiere-select">			
 			<%= render 'select_matiere_input' %>
 		</select>
+		<div class="document-types-filter">
+			<% @document_types.each do |document_type| %>
+				<label for="document_type_filter_<%= document_type.id %>"><%= document_type.nom %></label><input type="checkbox" name="document_type_filter" value="<%= document_type.id %>" id="document_type_filter_<%= document_type.id %>" class="checkbox-filters">
+			<% end %>
+		</div>
 	</div>
 </div>
 

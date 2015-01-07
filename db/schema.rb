@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230124549) do
+ActiveRecord::Schema.define(version: 20150106132958) do
 
   create_table "bloc_parcours", force: true do |t|
     t.integer  "bloc_id"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(version: 20141230124549) do
     t.string   "nom"
   end
 
+  create_table "document_types", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "nom"
+  end
+
   create_table "documents", force: true do |t|
     t.integer  "user_id"
     t.integer  "matiere_id"
@@ -46,7 +52,10 @@ ActiveRecord::Schema.define(version: 20141230124549) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.integer  "document_type_id"
   end
+
+  add_index "documents", ["document_type_id"], name: "index_documents_on_document_type_id"
 
   create_table "filieres", force: true do |t|
     t.datetime "created_at"

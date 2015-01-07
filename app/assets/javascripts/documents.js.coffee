@@ -2,14 +2,37 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-attach_documents_search_input_listener = () ->
-        $("#search-input").on 'change', ->
+attach_documents_checkbox_filters_listener = () ->
+        $(".checkbox-filters").on 'change', ->
+          checkbox_values = []
+          $(".checkbox-filters:checked").each ->
+            checkbox_values.push $(this).val()
+            return
           $.ajax Routes.update_documents_path(),
             type: 'GET'
             data:
               search_input: $("#search-input").val()
               filiere_id: $("#search-filiere-select").val()
               matiere_id: $("#search-matiere-select").val()
+              document_type_values: checkbox_values
+
+            dataType: 'script'
+
+          return
+
+attach_documents_search_input_listener = () ->
+        $("#search-input").on 'change', ->
+          checkbox_values = []
+          $(".checkbox-filters:checked").each ->
+            checkbox_values.push $(this).val()
+            return
+          $.ajax Routes.update_documents_path(),
+            type: 'GET'
+            data:
+              search_input: $("#search-input").val()
+              filiere_id: $("#search-filiere-select").val()
+              matiere_id: $("#search-matiere-select").val()
+              document_type_values: checkbox_values
 
             dataType: 'script'
 
@@ -24,12 +47,17 @@ attach_documents_search_select_filiere_listener = () ->
 
             dataType: 'script'
 
+          checkbox_values = []
+          $(".checkbox-filters:checked").each ->
+            checkbox_values.push $(this).val()
+            return
           $.ajax Routes.update_documents_path(),
             type: 'GET'
             data:
               search_input: $("#search-input").val()
               filiere_id: $("#search-filiere-select").val()
               matiere_id: ''
+              document_type_values: checkbox_values
 
             dataType: 'script'
 
@@ -37,12 +65,17 @@ attach_documents_search_select_filiere_listener = () ->
 
 attach_documents_search_select_matiere_listener = () ->
         $("#search-matiere-select").on 'change', ->
+          checkbox_values = []
+          $(".checkbox-filters:checked").each ->
+            checkbox_values.push $(this).val()
+            return
           $.ajax Routes.update_documents_path(),
             type: 'GET'
             data:
               search_input: $("#search-input").val()
               filiere_id: $("#search-filiere-select").val()
               matiere_id: $("#search-matiere-select").val()
+              document_type_values: checkbox_values
 
             dataType: 'script'
 
@@ -80,6 +113,7 @@ $(document).on('page:load', attach_upload_select_file_listener)
 $(document).on('page:load', attach_documents_search_input_listener)
 $(document).on('page:load', attach_documents_search_select_filiere_listener)
 $(document).on('page:load', attach_documents_search_select_matiere_listener)
+$(document).on('page:load', attach_documents_checkbox_filters_listener)
 
 initialize = $(document).ready ->
     attach_upload_select_filiere_listener()
@@ -87,3 +121,4 @@ initialize = $(document).ready ->
     attach_documents_search_input_listener()
     attach_documents_search_select_filiere_listener()
     attach_documents_search_select_matiere_listener()
+    attach_documents_checkbox_filters_listener()

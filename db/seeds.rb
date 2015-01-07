@@ -9,6 +9,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# Creation des DocumentTypes
+
+annales = DocumentType.create nom: 'Annales'
+QCM = DocumentType.create nom: 'QCM'
+cours = DocumentType.create nom: 'Cours'
+tp = DocumentType.create nom: 'TP'
+td = DocumentType.create nom: 'TD'
+
 # Creation des filieres
 
 citise1 = Filiere.create nom: 'CITISE1'

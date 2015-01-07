@@ -5,7 +5,11 @@
 				<% if matiere.option == nil || matiere.option == current_user.option %>
 					<% matiere.documents.each do |document| %>
 						<% if document.corresponds_to_user_input(params[:search_input]) %>
-							<%= render 'document', document: document %>
+							<% if params[:document_type_values] == nil %>
+								<%= render 'document', document: document %>
+							<% elsif params[:document_type_values] == [] || params[:document_type_values].include?(document.document_type.id.to_s) %>
+								<%= render 'document', document: document %>
+							<% end %>
 						<% end %>
 					<% end %>
 				<% end %>
@@ -14,7 +18,11 @@
 	<% else %>
 		<% @selected_matiere.documents.each do |document| %>
 			<% if document.corresponds_to_user_input(params[:search_input]) %>
-				<%= render 'document', document: document %>
+				<% if params[:document_type_values] == nil %>
+					<%= render 'document', document: document %>
+				<% elsif params[:document_type_values] == [] || params[:document_type_values].include?(document.document_type.id.to_s) %>
+					<%= render 'document', document: document %>
+				<% end %>
 			<% end %>
 		<% end %>
 	<% end %>

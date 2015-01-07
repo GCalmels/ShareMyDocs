@@ -8,6 +8,7 @@ class DocumentsController < ApplicationController
 		@blocs = @selected_filiere.blocs.where('id NOT IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations) 
 											OR id IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations 
 												WHERE parcours_id = ?)', "#{current_user.parcours.id}")
+		@document_types = DocumentType.all
 	end
 
 	def update_documents
@@ -29,6 +30,7 @@ class DocumentsController < ApplicationController
 		@blocs = current_filiere.blocs.where('id NOT IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations) 
 											OR id IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations 
 												WHERE parcours_id = ?)', "#{current_user.parcours.id}")
+		@document_types = DocumentType.all
 	end
 
 	def update_blocs
@@ -50,9 +52,10 @@ class DocumentsController < ApplicationController
 		else
 			current_filiere = current_user.filiere
 			@filieres = select_previous_filieres(current_filiere)
-			@blocs = filiere.blocs.where('id NOT IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations) 
+			@blocs = current_filiere.blocs.where('id NOT IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations) 
 											OR id IN (SELECT DISTINCT(bloc_id) FROM bloc_parcours_associations 
 												WHERE parcours_id = ?)', "#{current_user.parcours.id}")
+			@document_types = DocumentType.all
 			render 'new'
 		end		
 	end
@@ -60,7 +63,7 @@ class DocumentsController < ApplicationController
 	private
 
 	def document_params
-		params.require(:document).permit(:description, :matiere_id, :file)
+		params.require(:document).permit(:description, :matiere_id, :file, :document_type_id)
 	end
 
 	def select_previous_filieres(current_user_filiere)
