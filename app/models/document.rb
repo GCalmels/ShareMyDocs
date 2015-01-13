@@ -12,17 +12,8 @@ class Document < ActiveRecord::Base
 			#:url => "/system/:class/:attachment/:id/:style/:basename.:extension"
 
 	validates_attachment :file, presence: true,
-					:content_type => { :content_type => ["image/jpeg", "image/gif", "image/png", "application/pdf", "application/force-download"] }
-					#:size => { :in => 0..10.kilobytes }
-	
-	def self.search(search_input)
-		if search_input
-			search_input.downcase!
-			where('LOWER(nom) LIKE ?', "%#{search_input}%")### TODO
-		else
-			all
-		end
-	end
+					:content_type => { :content_type => ["image/jpeg", "image/png", "application/pdf", "application/force-download", "application/zip"] },
+					:size => { :in => 0..20.megabytes }
 
 	def corresponds_to_user_input(search_input)
 		if search_input == nil || search_input.blank?

@@ -2,9 +2,7 @@
 <% @blocs.each do |bloc| %>
 	<optgroup label="<%= bloc.nom %> - S<%= bloc.semestre.numero %>">
 	<% bloc.matieres.each do |matiere| %>
-		<% if matiere.option == nil || matiere.option == current_user.option %>
-			<%= content_tag(:option, matiere.nom, value: matiere.id) %>
-		<% end %>
+		<%= content_tag(:option, matiere.nom, value: matiere.id) %>
 	<% end %>
 	</optgroup>
 <% end %>

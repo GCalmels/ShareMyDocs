@@ -1,5 +1,4 @@
 <%= form_for(@document, url: documents_new_path, html: {class: "", role: "form", multipart: true}) do |f| %>
-	<%= render 'shared/error_messages', object: f.object %>
 	<div class="form-group">
 		<%= f.label :matiere %>
 		<%= f.select :matiere_id, [], {}, {class: "form-control", required: true} do %>
@@ -31,8 +30,9 @@
     	</span>
     	<label for="document_file" id="upload-file-label">No file selected.</label>
 	</div>
+	<%= render 'shared/error_messages', object: f.object %>
 		
 	<div class="text-align-right">
 		<%= f.submit "Upload!", class: "btn btn-lg btn-primary" %>
-	</div>
+	</div>	
 <% end %>

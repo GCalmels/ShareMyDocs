@@ -1,15 +1,21 @@
-<li class="document">
-	<h2>
-		<%= link_to document.file_file_name, document.file.url, target: '_blank' %>
-		<small>Nombre de download : <%= document.nb_downloads %></small>
-	</h2>
-
-	<div class="description">
-		<%= document.description %>
-	</div>
-	<div>
-		<small>
-			<%= document.matiere.bloc.filiere.nom %> - <%= document.matiere.bloc.nom %> - <%= document.matiere.nom %> - <%= document.document_type.nom %>
-		</small>		
-	</div>
+<li>
+	<a href="<%= document.file.url %>" target="_blank" class="text-decoration-none">
+		<div class="document">
+			<div class="document-title">
+				<%= document.matiere.bloc.filiere.nom %> - <%= document.matiere.bloc.nom %> - <%= document.matiere.nom %> - <%= document.document_type.nom %>
+				<small>Nombre de downloads : <%= document.nb_downloads %></small>
+			</div>
+			<div class="document-description">
+				<%= document.description %>
+			</div>
+			<div>
+				<div class="document-author display-inline-block">
+					By <%= document.user.login %>
+				</div>
+				<div class="document-name display-inline-block">
+					<%= document.file_file_name %>
+				</div>
+			</div>
+		</div>
+	</a>
 </li>
