@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106132958) do
+ActiveRecord::Schema.define(version: 20150114100307) do
 
   create_table "bloc_parcours", force: true do |t|
     t.integer  "bloc_id"
@@ -103,6 +103,17 @@ ActiveRecord::Schema.define(version: 20150106132958) do
     t.datetime "updated_at"
     t.integer  "numero"
   end
+
+  create_table "user_document_associations", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "document_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_document_associations", ["document_id"], name: "index_user_document_associations_on_document_id"
+  add_index "user_document_associations", ["user_id", "document_id"], name: "index_user_document_associations_on_user_id_and_document_id", unique: true
+  add_index "user_document_associations", ["user_id"], name: "index_user_document_associations_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "login",               default: "",    null: false

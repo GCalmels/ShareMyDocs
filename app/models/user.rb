@@ -8,4 +8,7 @@ class User < ActiveRecord::Base
   belongs_to :parcours
   belongs_to :option
   belongs_to :lv2
+
+  has_many :documents_viewed, through: :user_document_associations, source: :document
+  has_many :user_document_associations, dependent: :destroy
 end

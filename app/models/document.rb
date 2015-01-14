@@ -3,6 +3,9 @@ class Document < ActiveRecord::Base
 	belongs_to :matiere
 	belongs_to :document_type
 
+	has_many :users, through: :user_document_associations
+	has_many :user_document_associations, dependent: :destroy
+
 	validates :matiere, presence: true
 	validates :user, presence: true
 	validates :description, presence: true

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'profile', to: 'users#show'
   get 'profile/edit', to: 'users#edit'
 
+  get 'documents/check_viewed', to: 'documents#check_viewed'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

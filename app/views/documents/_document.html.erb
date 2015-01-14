@@ -1,9 +1,9 @@
 <li>
-	<a href="<%= document.file.url %>" target="_blank" class="text-decoration-none">
+	<a href="<%= documents_check_viewed_path %>?document=<%= document.id %>" target="_blank" class="text-decoration-none">
 		<div class="document">
 			<div class="document-title">
 				<%= document.matiere.bloc.filiere.nom %> - <%= document.matiere.bloc.nom %> - <%= document.matiere.nom %> - <%= document.document_type.nom %>
-				<small>Nombre de downloads : <%= document.nb_downloads %></small>
+				<small>Nombre de vues : <%= document.users.count %></small>
 			</div>
 			<div class="document-description">
 				<%= document.description %>

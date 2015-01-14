@@ -47,6 +47,15 @@ class DocumentsController < ApplicationController
 		end		
 	end
 
+	def check_viewed
+		document = Document.find(params[:document])
+		if (!current_user.documents_viewed.include?(document))
+			user_document_association = UserDocumentAssociation.new(user: current_user, document: document)
+			user_document_association.save
+		end
+		redirect_to document.file.url
+	end
+
 	private
 
 	def document_params
