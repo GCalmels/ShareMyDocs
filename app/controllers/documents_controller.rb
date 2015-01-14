@@ -35,7 +35,6 @@ class DocumentsController < ApplicationController
 	def create
 		@document = Document.new(document_params)
 		@document.user = current_user
-		@document.nb_downloads = 0
 		if @document.save			
 			flash[:success] = "The Document has been correctly uploaded"
 			redirect_to documents_path

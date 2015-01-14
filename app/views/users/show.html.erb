@@ -14,36 +14,12 @@
 							<td><%= current_user.login %></td>
 						</tr>
 						<tr>
-							<td class="title">Filiere</td>
-							<% if current_user.filiere != nil %>
-							<td><%= current_user.filiere.nom %></td>
-							<% else %>
-							<td>NA</td>
-							<% end %>
+							<td class="title">Nombre de documents uploadés</td>
+							<td><%= current_user.documents.count %></td>
 						</tr>
 						<tr>
-							<td class="title">Parcours</td>
-							<% if current_user.parcours != nil %>
-							<td><%= current_user.parcours.nom %></td>
-							<% else %>
-							<td>NA</td>
-							<% end %>
-						</tr>
-						<tr>
-							<td class="title">Options</td>
-							<% if current_user.option != nil %>
-							<td><%= current_user.option.nom %></td>
-							<% else %>
-							<td>NA</td>
-							<% end %>
-						</tr>
-						<tr>
-							<td class="title">LV2</td>
-							<% if current_user.lv2 != nil %>
-							<td><%= current_user.lv2.nom %></td>
-							<% else %>
-							<td>NA</td>
-							<% end %>
+							<td class="title">Nombre de documents vues</td>
+							<td><%= current_user.documents_viewed.count %></td>
 						</tr>
 					</table>
 				</div>

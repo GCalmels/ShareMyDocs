@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20150114100307) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
-    t.integer  "nb_downloads"
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
@@ -127,10 +126,6 @@ ActiveRecord::Schema.define(version: 20150114100307) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",               default: false
-    t.integer  "filiere_id"
-    t.integer  "parcours_id"
-    t.integer  "option_id"
-    t.integer  "lv2_id"
   end
 
   add_index "users", ["login"], name: "index_users_on_login", unique: true

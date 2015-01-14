@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   get 'documents/update', to: 'documents#update_documents', as: 'update_documents'
 
   get 'profile', to: 'users#show'
-  get 'profile/edit', to: 'users#edit'
 
   get 'documents/check_viewed', to: 'documents#check_viewed'
 
