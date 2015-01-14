@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
 	before_filter :authenticate_user!
+	before_action :correct_user, only: [:destroy, :edit, :update]
 	
 	def index
 		@filieres = Filiere.all
@@ -55,9 +56,27 @@ class DocumentsController < ApplicationController
 		redirect_to document.file.url
 	end
 
+	def destroy
+		document = Document.find(params[:id])
+		document.destroy
+		flash[:success] = "The Document has been correctly destroyed"
+		redirect_to documents_path
+	end
+
 	private
 
 	def document_params
 		params.require(:document).permit(:description, :matiere_id, :file, :document_type_id)
+	end
+
+	def correct_user
+		document = Document.find(params[:id])
+		if current_user.admin || current_user == document.user
+			true
+		else
+			raise "You don't have the rights to perform this action!"
+		end
+	rescue
+		redirect_to root_url
 	end
 end

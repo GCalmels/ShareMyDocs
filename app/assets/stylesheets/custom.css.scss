@@ -492,7 +492,27 @@ textarea {
   border: solid 1px #EEE;
   border-radius: 4px;
   background-color: #EEE;
+  margin-bottom: 5px;  
+}
+
+.width-95-percent {
+  width: 95%;
+}
+
+.document-icon span.glyphicon {
+  font-size: 3.0em;
+}
+
+.document-icons {
+  float: right;
+  width: 5%;
   margin-bottom: 5px;
+}
+
+.document-icon {
+  text-align: center;
+  line-height: 3.2;
+  vertical-align: middle;
 }
 
 .text-decoration-none {
