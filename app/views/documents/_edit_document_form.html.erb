@@ -1,0 +1,38 @@
+<%= form_for(@document, url: document_path(@document), html: {class: "", role: "form", multipart: true}) do |f| %>
+	<div class="form-group">
+		<%= f.label :matiere %>
+		<%= f.select :matiere_id, [], {}, {class: "form-control", required: true} do %>
+			<%= render 'select_matiere_input' %>
+		<% end %>
+	</div>
+	<div class="form-group">
+		<label>Type</label><br/>
+		<div>
+			<% @document_types.each do |document_type| %>
+				<div class="upload-document-type">
+					<div class="display-inline-block upload-document-type-label">
+						<label for="document_document_type_id_<%= document_type.id %>"><%= document_type.nom %></label>
+					</div>
+					<div class="display-inline-block upload-document-type-button">
+						<%= f.radio_button :document_type_id, document_type.id, required: true %>
+					</div>
+				</div>					
+			<% end %>
+		</div>		
+	</div>
+	<div class="form-group">
+		<%= f.label :description %>
+		<%= f.text_area :description, class: "form-control", required: true, maxlength: 500 %>
+	</div>
+	<div class="form-group">
+	    <span class="btn btn-default btn-file btn-lg">
+    		Select File <%= f.file_field :file, required: true %>
+    	</span>
+    	<label for="document_file" id="upload-file-label">No file selected.</label>
+	</div>
+	<%= render 'shared/error_messages', object: f.object %>
+		
+	<div class="text-align-right">
+		<%= f.submit "Upload!", class: "btn btn-lg btn-primary" %>
+	</div>	
+<% end %>

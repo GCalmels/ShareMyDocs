@@ -63,6 +63,28 @@ class DocumentsController < ApplicationController
 		redirect_to documents_path
 	end
 
+	def edit
+		@document = Document.find(params[:id])
+		@filieres = Filiere.all
+		@document_types = DocumentType.all
+		@blocs = @document.matiere.bloc.filiere.blocs
+	end
+
+	def update
+		@document = Document.find(params[:id])
+		@document.assign_attributes(document_params)
+		@document.user = current_user
+		if @document.save
+			flash[:success] = "Document updated"
+			redirect_to documents_path
+		else
+			@filieres = Filiere.all
+			@blocs = @document.matiere.bloc.filiere.blocs
+			@document_types = DocumentType.all
+			render 'edit'
+		end
+	end
+
 	private
 
 	def document_params
