@@ -3,4 +3,8 @@ class UsersController < ApplicationController
 
 	def show		
 	end
+
+	def my_docs
+		@documents = Document.where(user: current_user)
+	end
 end

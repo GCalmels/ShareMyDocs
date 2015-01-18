@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'documents/update', to: 'documents#update_documents', as: 'update_documents'
 
   get 'profile', to: 'users#show'
+  get 'profile/myDocs', to: 'users#my_docs', as: 'my_docs'
 
   get 'documents/check_viewed', to: 'documents#check_viewed'
   resources :documents, only: [:destroy, :edit, :update]

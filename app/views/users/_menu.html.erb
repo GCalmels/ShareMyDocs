@@ -4,6 +4,6 @@
 			Personal settings
 		</h3>
 		<%= link_to "Profile", profile_path, class: (params[:action] == 'show' && params[:controller] == 'users' ? "js-selected-navigation-item menu-item selected" : "js-selected-navigation-item menu-item") %>
-		<%= link_to "MyDocs", '#', class: (params[:action] == 'mydocs' && params[:controller] == 'users' ? "js-selected-navigation-item menu-item selected" : "js-selected-navigation-item menu-item") %>
+		<%= link_to "MyDocs", my_docs_path, class: (params[:action] == 'my_docs' && params[:controller] == 'users' ? "js-selected-navigation-item menu-item selected" : "js-selected-navigation-item menu-item") %>
 	</nav>
 </div>
