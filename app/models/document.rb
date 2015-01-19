@@ -24,25 +24,14 @@ class Document < ActiveRecord::Base
 		else
 			search_input.downcase!
 			search_array = search_input.split
-			result1 = search_array.map{ |o| self.file_file_name.downcase =~ /\b#{Regexp.escape(o)}\b/ }
-			result2 = search_array.map{ |o| self.description.downcase =~ /\b#{Regexp.escape(o)}\b/ }
-			result3 = search_array.map{ |o| self.document_type.nom.downcase =~ /\b#{Regexp.escape(o)}\b/ }
-
-			result = result1
-			i = 0
-			result2.each do |p|
-				if p != nil
-					result[i] = p
-				end
-				i = i+1
-			end
-			i = 0
-			result3.each do |p|
-				if p != nil
-					result[i] = p
-				end
-				i = i+1
-			end
+			test_string = self.file_file_name.downcase + " " +
+						self.description.downcase + " " +
+						self.document_type.nom.downcase + " " +
+						self.user.login.downcase + " " +
+						self.matiere.nom.downcase + " " +
+						self.matiere.bloc.nom.downcase + " " +
+						self.matiere.bloc.filiere.nom.downcase
+			result = search_array.map{ |o| test_string =~ /\b#{Regexp.escape(o)}\b/ }
 
 			!result.include?(nil)
 		end
