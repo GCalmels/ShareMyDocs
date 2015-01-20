@@ -13,23 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20150114100307) do
 
-  create_table "bloc_parcours", force: true do |t|
-    t.integer  "bloc_id"
-    t.integer  "parcours_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "bloc_parcours_associations", force: true do |t|
-    t.integer  "bloc_id"
-    t.integer  "parcours_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "blocs", force: true do |t|
     t.integer  "semestre_id"
-    t.integer  "filiere_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "nom"
@@ -64,43 +49,18 @@ ActiveRecord::Schema.define(version: 20150114100307) do
 
   add_index "filieres", ["nom"], name: "index_filieres_on_nom", unique: true
 
-  create_table "lv2s", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "nom"
-    t.string   "niveau"
-  end
-
   create_table "matieres", force: true do |t|
-    t.integer  "option_id"
     t.integer  "bloc_id"
-    t.integer  "lv2_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "nom"
   end
-
-  create_table "options", force: true do |t|
-    t.integer  "semestre_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "nom"
-  end
-
-  create_table "parcours", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "nom"
-    t.integer  "numero"
-  end
-
-  add_index "parcours", ["nom"], name: "index_parcours_on_nom", unique: true
-  add_index "parcours", ["numero"], name: "index_parcours_on_numero", unique: true
 
   create_table "semestres", force: true do |t|
+    t.integer "filiere_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "numero"
+    t.string  "nom"
   end
 
   create_table "user_document_associations", force: true do |t|

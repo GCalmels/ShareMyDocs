@@ -1,6 +1,5 @@
 class Filiere < ActiveRecord::Base
-	has_many :blocs, dependent: :destroy
-	has_many :semestres
+	has_many :semestres, dependent: :destroy
 
 	validates :nom, presence: true, uniqueness: { case_sensitive: false }
 end

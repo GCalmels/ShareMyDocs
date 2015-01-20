@@ -10,7 +10,7 @@
 				<label for="filieres_select">Filiere</label>
 				<select class="form-control" id="filieres_select">
 					<% @filieres.each do |filiere| %>
-						<option value="<%= filiere.id %>" <%= 'selected' if filiere == @document.matiere.bloc.filiere %>><%= filiere.nom %></option>
+						<option value="<%= filiere.id %>" <%= 'selected' if filiere == @document.matiere.bloc.semestre.filiere %>><%= filiere.nom %></option>
 					<% end %>
 				</select>
 			</div>

@@ -2,7 +2,7 @@
 	<a href="<%= documents_check_viewed_path %>?document=<%= document.id %>" target="_blank" class="text-decoration-none">
 		<div class="document <%= 'display-inline-block width-95-percent' if document.user == current_user || current_user.admin %>">
 			<div class="document-title">
-				<%= document.matiere.bloc.filiere.nom %> - <%= document.matiere.bloc.nom %> - <%= document.matiere.nom %> - <%= document.document_type.nom %>
+				<%= document.matiere.bloc.semestre.filiere.nom %> - <%= document.matiere.bloc.nom %> - <%= document.matiere.nom %> - <%= document.document_type.nom %>
 				<small>Nombre de vues : <%= document.users.count %></small>
 			</div>
 			<div class="document-description">

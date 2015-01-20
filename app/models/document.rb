@@ -30,7 +30,8 @@ class Document < ActiveRecord::Base
 						self.user.login.downcase + " " +
 						self.matiere.nom.downcase + " " +
 						self.matiere.bloc.nom.downcase + " " +
-						self.matiere.bloc.filiere.nom.downcase
+						self.matiere.bloc.semestre.nom.downcase + " " +
+						self.matiere.bloc.semestre.filiere.nom.downcase
 			result = search_array.map{ |o| test_string =~ /\b#{Regexp.escape(o)}\b/ }
 
 			!result.include?(nil)

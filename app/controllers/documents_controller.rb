@@ -5,8 +5,9 @@ class DocumentsController < ApplicationController
 	def index
 		@filieres = Filiere.all
 		@selected_filiere = Filiere.where(id: params[:filiere]).first
-		@selected_filiere = @filieres.first unless @selected_filiere != nil		
-		@blocs = @selected_filiere.blocs
+		@selected_filiere = @filieres.first unless @selected_filiere != nil
+		semestres = @selected_filiere.semestres
+		@blocs = Bloc.where(semestre: semestres)
 		@document_types = DocumentType.all
 	end
 
@@ -15,7 +16,8 @@ class DocumentsController < ApplicationController
 		@selected_matiere = Matiere.where(id: params[:matiere_id]).first
 		if @selected_matiere == nil
 			selected_filiere = Filiere.find(params[:filiere_id])
-			@blocs = selected_filiere.blocs
+			semestres = selected_filiere.semestres
+			@blocs = Bloc.where(semestre: semestres)
 		end
 	end
 
@@ -23,14 +25,16 @@ class DocumentsController < ApplicationController
 		@document = Document.new
 		@filieres = Filiere.all
 		@document_types = DocumentType.all
-		@blocs = @filieres.first.blocs
+		semestres = @filieres.first.semestres
+		@blocs = Bloc.where(semestre: semestres)
 	end
 
 	def update_blocs
 		# updates matieres based on filiere selected
 		filiere = Filiere.find(params[:filiere_id])
 		# map to name and id for use in our options_for_select
-		@blocs = filiere.blocs
+		semestres = filiere.semestres
+		@blocs = Bloc.where(semestre: semestres)
 	end
 
 	def create
@@ -41,7 +45,8 @@ class DocumentsController < ApplicationController
 			redirect_to documents_path
 		else
 			@filieres = Filiere.all
-			@blocs = @filieres.first.blocs
+			semestres = @filieres.first.semestres
+			@blocs = Bloc.where(semestre: semestres)
 			@document_types = DocumentType.all
 			render 'new'
 		end		
@@ -67,7 +72,7 @@ class DocumentsController < ApplicationController
 		@document = Document.find(params[:id])
 		@filieres = Filiere.all
 		@document_types = DocumentType.all
-		@blocs = @document.matiere.bloc.filiere.blocs
+		@blocs = @document.matiere.bloc.semestre.blocs
 	end
 
 	def update
@@ -79,7 +84,7 @@ class DocumentsController < ApplicationController
 			redirect_to documents_path
 		else
 			@filieres = Filiere.all
-			@blocs = @document.matiere.bloc.filiere.blocs
+			@blocs = @document.matiere.bloc.semestre.blocs
 			@document_types = DocumentType.all
 			render 'edit'
 		end
