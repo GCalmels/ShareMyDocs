@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'documents/check_viewed', to: 'documents#check_viewed'
   resources :documents, only: [:destroy, :edit, :update]
 
+  get 'admin', to: 'administration#index', as: 'administration'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
