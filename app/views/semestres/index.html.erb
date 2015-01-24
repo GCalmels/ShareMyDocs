@@ -1,0 +1,14 @@
+<% provide :title, "Admin Semestres" %>
+
+<div class="container">
+	<div class="admin-index-container">
+		<h1>Management des semestres de <%= @filiere.nom %></h1>
+		<ul>
+			<%= render @semestres %>
+		</ul>
+		<div>
+			<%= link_to 'Créer nouveau semestre', new_filiere_semestre_path(@filiere), class: "btn btn-lg btn-primary" %>
+			<%= link_to "Retour", filiere_path(@filiere), class: "btn btn-lg btn-default float-right" %>
+		</div>		
+	</div>
+</div>

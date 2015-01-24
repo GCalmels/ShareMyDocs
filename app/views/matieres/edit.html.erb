@@ -1,0 +1,19 @@
+<% provide(:title, "Edit matiere") %>
+
+<div class="container">
+	<div class="admin-index-container">
+		<h1>Update matiere <%= @matiere.nom %></h1>
+
+		<div class="jumbotron admin-form">
+			<%= form_for(@matiere, url: filiere_semestre_bloc_matiere_path, method: :patch) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<%= render 'fields', f: f %>
+			
+			<div>
+				<%= f.submit "Save changes", class: "btn btn-lg btn-primary" %>
+				<%= link_to "Annuler", filiere_semestre_bloc_matieres_path(@filiere, @semestre, @bloc), class: "btn btn-lg btn-default float-right" %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>

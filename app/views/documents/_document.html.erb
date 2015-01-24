@@ -1,0 +1,35 @@
+<li>
+	<a href="<%= documents_check_viewed_path %>?document=<%= document.id %>" target="_blank" class="text-decoration-none">
+		<div class="document <%= 'display-inline-block width-95-percent' if document.user == current_user || current_user.admin %>">
+			<div class="document-title">
+				<%= document.matiere.bloc.semestre.filiere.nom %> - <%= document.matiere.bloc.nom %> - <%= document.matiere.nom %> - <%= document.document_type.nom %>
+				<small>Nombre de vues : <%= document.users.count %></small>
+			</div>
+			<div class="document-description">
+				<%= document.description %>
+			</div>
+			<div>
+				<div class="document-author display-inline-block">
+					By <%= document.user.login %>
+				</div>
+				<div class="document-name display-inline-block">
+					<%= document.file_file_name %>
+				</div>
+			</div>
+		</div>
+	</a>
+	<% if document.user == current_user || current_user.admin %>
+		<div class="display-inline-block document-icons">
+			<a title="Edit <%= document.file_file_name %>" rel="nofollow" href="<%= edit_document_path(document) %>" data-method="get">
+				<div class="document-icon">
+					<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+				</div>
+			</a>
+			<a title="Delete <%= document.file_file_name %>" rel="nofollow" href="<%= document_path(document) %>" data-method="delete" data-confirm="Delete <%= document.file_file_name %>?">
+				<div class="document-icon">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</div>
+			</a>
+		</div>
+	<% end %>
+</li>

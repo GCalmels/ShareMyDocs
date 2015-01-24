@@ -1,0 +1,17 @@
+<% provide(:title, @matiere.nom) %>
+
+<div class="container">
+	<div class="admin-index-container">
+		<h1><%= @matiere.nom %></h1>
+
+		<div id="documents">
+			<ul class="documents">
+				<% @matiere.documents.each do |document| %>
+				<%= render 'documents/document', document: document %>
+				<% end %>
+			</ul>		
+		</div>
+
+		<%= link_to "Retour", filiere_semestre_bloc_matieres_path(@filiere, @semestre, @bloc), class: "btn btn-lg btn-default float-right" %></p>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+<% provide :title, "Admin Blocs" %>
+
+<div class="container">
+	<div class="admin-index-container">
+		<h1>Management des blocs de <%= @filiere.nom %> - <%= @semestre.nom %></h1>
+
+		<ul>
+			<%= render @blocs %>
+		</ul>
+		<div>
+			<%= link_to 'Créer nouveau bloc', new_filiere_semestre_bloc_path(@filiere, @semestre), class: "btn btn-primary btn-lg" %>
+			<%= link_to "Retour", filiere_semestre_path(@filiere, @semestre), class: "btn btn-default btn-lg float-right" %>
+
+		</div>
+	</div>
+</div>

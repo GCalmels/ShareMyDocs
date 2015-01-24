@@ -15,3 +15,5 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
+//= require js-routes
+//= require twitter/bootstrap

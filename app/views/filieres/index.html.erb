@@ -1,0 +1,13 @@
+<% provide :title, "Admin Filieres" %>
+
+<div class="container">
+	<div class="admin-index-container">
+		<h1>Management des Filieres</h1>		
+		<ul>
+			<%= render @filieres %>
+		</ul>
+		<div>
+			<%= link_to 'Créer nouvelle filiere', new_filiere_path, class: 'btn btn-primary btn-lg' %>
+		</div>
+	</div>	
+</div>

@@ -1,0 +1,27 @@
+<ul class="documents">
+	<% if @selected_matiere == nil %>
+		<% @blocs.each do |bloc| %>
+			<% bloc.matieres.each do |matiere| %>
+				<% matiere.documents.each do |document| %>
+					<% if document.corresponds_to_user_input(params[:search_input]) %>
+						<% if params[:document_type_values] == nil %>
+							<%= render 'document', document: document %>
+						<% elsif params[:document_type_values] == [] || params[:document_type_values].include?(document.document_type.id.to_s) %>
+							<%= render 'document', document: document %>
+						<% end %>
+					<% end %>
+				<% end %>
+			<% end %>
+		<% end %>
+	<% else %>
+		<% @selected_matiere.documents.each do |document| %>
+			<% if document.corresponds_to_user_input(params[:search_input]) %>
+				<% if params[:document_type_values] == nil %>
+					<%= render 'document', document: document %>
+				<% elsif params[:document_type_values] == [] || params[:document_type_values].include?(document.document_type.id.to_s) %>
+					<%= render 'document', document: document %>
+				<% end %>
+			<% end %>
+		<% end %>
+	<% end %>
+</ul>

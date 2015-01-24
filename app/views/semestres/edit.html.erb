@@ -1,0 +1,19 @@
+<% provide(:title, "Edit semestre") %>
+
+<div class="container">
+	<div class="admin-index-container">
+		<h1>Update semestre <%= @semestre.nom %></h1>
+
+		<div class="jumbotron admin-form">
+			<%= form_for(@semestre, url: filiere_semestre_path, method: :patch) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<%= render 'fields', f: f %>
+			
+			<div>
+				<%= f.submit "Save changes", class: "btn btn-large btn-primary " %>
+				<%= link_to "Annuler", filiere_semestres_path(@filiere), class: "btn btn-large btn-primary  float-right" %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>

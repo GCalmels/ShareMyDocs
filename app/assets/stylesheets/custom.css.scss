@@ -1,2 +1,742 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+/* Footer Custom CSS
+-------------------------------------------------- */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+
+  padding-top: 10px;
+
+  border-top: solid 1px #eee;
+}
+
+.footer a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.text {
+  margin-left: 30%;
+  padding-bottom: 10px;
+}
+
+.col-md-4::before, .text {
+  /* these are the important styles for the centered element: */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#address {
+  margin: 0;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  .footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Form Signin CSS
+-------------------------------------------------- */
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Home Page CSS
+-------------------------------------------------- */
+
+.arrow-box { 
+  position: relative;
+  width: 20%;
+  height: 80px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 72px;
+  font-size: 27px;
+}
+
+.blue-arrow {
+  background: #499FD6; 
+  border: 4px solid #c2e1f5;
+}
+
+.blue-lighter-arrow {
+  background: #88b7d5; 
+  border: 4px solid #c2e1f5;
+}
+
+.blue-light-arrow {
+  background: #69ACD6; 
+  border: 4px solid #c2e1f5;
+}
+
+.red-arrow {
+  background: #F56467; 
+  border: 4px solid #F5C2C3;
+}
+
+.red-lighter-arrow {
+  background: #F5A6A8; 
+  border: 4px solid #F5C2C3;
+}
+
+.red-light-arrow {
+  background: #F58788; 
+  border: 4px solid #F5C2C3;
+}
+
+.green-arrow {
+  background: #88DB7D;
+  border: 4px solid #C8F5C2;
+}
+
+.green-light-arrow {
+  background: #9FDB97; 
+  border: 4px solid #C8F5C2;
+}
+
+.arrow-box:after, .arrow-box:before { 
+  left: 100%; top: 50%; 
+  border: solid transparent; 
+  content: " "; 
+  height: 0; 
+  width: 0; 
+  position: absolute; 
+  pointer-events: none; 
+} 
+
+.arrow-box:after {   
+  border-width: 36px; 
+  margin-top: -36px; 
+} 
+
+.arrow-box:before {
+  border-width: 42px; 
+  margin-top: -42px; 
+}
+
+.light-blue-border:before {
+  border-color: rgba(194, 225, 245, 0); 
+  border-left-color: #c2e1f5;
+}
+
+.blue-lighter-arrow:after {
+  border-color: rgba(136, 183, 213, 0); 
+  border-left-color: #88b7d5;
+}
+
+.blue-light-arrow:after {
+  border-color: rgba(105, 172, 214, 0); 
+  border-left-color: #69ACD6;
+}
+
+.blue-arrow:after {
+  border-color: rgba(73, 159, 214, 0); 
+  border-left-color: #499FD6;
+}
+
+.light-red-border:before {
+  border-color: rgba(245, 194, 195, 0); 
+  border-left-color: #F5C2C3;
+}
+
+.red-lighter-arrow:after {
+  border-color: rgba(245, 166, 168, 0); 
+  border-left-color: #F5A6A8;
+}
+
+.red-light-arrow:after {
+  border-color: rgba(245, 135, 136, 0); 
+  border-left-color: #F58788;
+}
+
+.red-arrow:after {
+  border-color: rgba(245, 100, 103, 0); 
+  border-left-color: #F56467;
+}
+
+.light-green-border:before {
+  border-color: rgba(200, 245, 194, 0); 
+  border-left-color: #C8F5C2;
+}
+
+.green-light-arrow:after {
+  border-color: rgba(159, 219, 151, 0); 
+  border-left-color: #9FDB97;
+}
+
+.green-arrow:after {
+  border-color: rgba(136, 219, 125, 0); 
+  border-left-color: #88DB7D;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.z-index-2 {
+  z-index: 2;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-0 {
+  z-index: 0;
+}
+
+.left-10px {
+  left: -10px;
+}
+
+.left-20px {
+  left: -20px;
+}
+
+.arrow-box a {
+  text-decoration: none;
+  color: #4D4D4D;
+}
+
+.arrow-box a:hover {
+  color: black;
+}
+
+/* User Profile Page CSS
+-------------------------------------------------- */
+
+.one-fourth {
+  width: 25%;
+}
+
+.three-fourths {
+  width: 75%;
+}
+
+.column {
+  float: left;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.columns:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.columns:before {
+  display: table;
+  content: "";
+}
+
+.columns {
+  margin-right: -10px;
+  margin-left:  -10px;
+}
+
+.menu {
+  margin-bottom: 15px;
+  list-style: outside none none;
+  background-color: #FFF;
+  border: 1px solid #D8D8D8;
+  border-radius: 3px;
+  min-width: 75px;
+}
+
+.menu-heading:first-child {
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+}
+
+.menu-heading {
+  display: block;
+  padding: 8px 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #555;
+  background-color: #F7F7F7;
+  border-bottom: 1px solid #EEE;
+}
+
+.menu-item.selected:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  content: "";
+  background-color: #D26911;
+}
+
+.menu-item.selected {
+  font-weight: bold;
+  color: #222;
+  cursor: default;
+  background-color: #FFF;
+}
+
+.menu-item {
+  position: relative;
+  display: block;
+  padding: 8px 10px;
+  text-shadow: 0px 1px 0px #FFF;
+  border-bottom: 1px solid #EEE;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.boxed-group {
+  position: relative;
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+
+.boxed-group > h3 {
+  background-color: #F5F5F5;
+  margin: 0px;
+  border-radius: 3px 3px 0px 0px;
+  border-width: 1px 1px 0px;
+  border-style: solid solid none;
+  border-color: #D8D8D8 #D8D8D8 -moz-use-text-color;
+  -moz-border-top-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  border-image: none;
+  padding: 9px 10px 10px;
+  font-size: 14px;
+  line-height: 17px;
+  display: block;
+  font-weight: bold;
+}
+
+.boxed-group-inner {
+  padding: 10px 10px;
+  background: none repeat scroll 0% 0% #FFF;
+  border: 1px solid #D8D8D8;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: #666;
+}
+
+.clearfix:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.clearfix:before {
+  display: table;
+  content: "";
+}
+
+.two-thirds {
+  width: 67%;
+}
+
+.column td {
+  width: 20%;
+  height: 40px;
+  font-size: 13px;
+}
+
+dl.user-edit-form {
+  margin: 15px 0px;
+}
+
+dl.user-edit-form > dt {
+  margin: 0px 0px 6px;
+}
+
+dl.user-edit-form > dt label {
+  position: relative;
+}
+
+label {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Upload Document Custom CSS
+-------------------------------------------------- */
+
+.left-right-margin-16-percent {
+  margin-left: 16%;
+  margin-right: 16%;
+}
+
+.upload-form-heading {
+  font-size: 350%;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 0;
+}
+
+@media (max-width: 400px) {
+  #upload-form-title {
+    display: none;
+  }
+  .upload-form-heading {
+    font-size: 250%;
+  }
+}
+
+textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  float: right;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+#upload-file-label {
+  background-color: #FFF;
+  height: 44px;
+  border: solid 1px #CCC;
+  width: 80%;
+  border-radius: 4px;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 9px;
+  padding-top: 9px;
+  overflow: auto;
+  text-align: right;
+}
+
+@media (max-width: 1200px) {
+  #upload-file-label {
+    width: 75%;
+  }
+}
+
+@media (max-width: 1000px) {
+  #upload-file-label {
+    width: 70%;
+  }
+}
+
+@media (max-width: 991px) {
+  #upload-file-label {
+    width: 65%;
+  }
+}
+
+@media (max-width: 640px) {
+  #upload-file-label {
+    width: 100%;
+  }
+}
+
+.upload-document-type {
+  display: inline-block;
+  min-width: 15%;
+}
+
+.upload-document-type-button {
+  margin-left: 2%;
+}
+
+@media (max-width: 1000px) {
+  .upload-document-type {
+    display: block;
+  }
+
+  .upload-document-type-label {
+    min-width: 50px;
+  }
+}
+
+/* Document Index Custom CSS
+-------------------------------------------------- */
+
+#documents {
+  margin-bottom: 10px;
+}
+
+.documents {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.document {
+  padding: 10px;
+  border: solid 1px #EEE;
+  border-radius: 4px;
+  background-color: #EEE;
+  margin-bottom: 5px;  
+}
+
+.width-95-percent {
+  width: 95%;
+}
+
+.document-icon span.glyphicon {
+  font-size: 3.0em;
+}
+
+.document-icons {
+  float: right;
+  width: 5%;
+  margin-bottom: 5px;
+}
+
+.document-icon {
+  text-align: center;
+  line-height: 3.2;
+  vertical-align: middle;
+}
+
+.text-decoration-none {
+  text-decoration: none!important;
+}
+
+.document:hover {
+  background-color: #CCC;
+  .document-title small {
+    color: black;
+  }
+  .document-name {
+    color: black;
+  }
+  .document-description {
+    color: black;
+  }
+}
+
+.document .document-title {
+  font-weight: bold;
+  font-size: 24px;
+  small {
+    font-style: italic;
+    font-size: 12px;
+    color: grey;
+    float: right;
+    font-weight: normal;
+  }
+}
+
+.document .document-description {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: grey;
+}
+
+.document .document-name {
+  float: right;
+  color: grey;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.document .document-author {
+  color: grey;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.search-box {
+  float: left;
+  width: 45%;
+}
+
+.search-filters {
+  display: inline-block;
+  width: 50%;
+}
+
+.document-types-filter {
+  text-align: left;
+  margin-top: 10px;
+  label {
+    margin-right: 10px;
+  }
+  label:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+/* Administration Custom CSS
+-------------------------------------------------- */
+
+.admin-index-container {
+  margin-left: 20%;
+  margin-bottom: 20px;
+  width: 60%;
+  h1 {
+    border-bottom: solid 1px #CCC;
+    margin-bottom: 20px;
+  }
+}
+
+.admin-index-container ul {
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.admin-index-object-content {
+  border: solid 1px #CCC;
+  border-radius: 4px;
+  padding: 10px;
+  width: 94%;
+  font-size: 22px;
+  text-align: center;
+  background-color: #EEE;
+  color: grey;
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .admin-index-object-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 420px) {
+  .admin-index-object-content {
+    width: 82%;
+  }
+}
+
+.admin-index-object-content:hover{
+  background-color: #CCC;
+  color: black;
+}
+
+.float-right {
+  float: right;
+}
+
+.admin-icon {
+  font-size: 20px;
+}
+
+.admin-form {
+  label {
+    font-size: 20px;
+  }
+}

@@ -5,7 +5,30 @@ Rails.application.routes.draw do
     post 'login' => 'devise/sessions#create', as: :user_session
     delete 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
   end
-  root 'authentication#login'
+  root 'platform#home'
+  get 'stats', to: 'platform#stats'
+
+  get 'documents', to: 'documents#index'
+  get 'documents/new', to: 'documents#new'
+  post 'documents/new', to: 'documents#create'
+  get 'documents/new/select/filiere', to: 'documents#update_blocs', as: 'update_blocs'
+  get 'documents/update', to: 'documents#update_documents', as: 'update_documents'
+
+  get 'profile', to: 'users#show'
+  get 'profile/myDocs', to: 'users#my_docs', as: 'my_docs'
+
+  get 'documents/check_viewed', to: 'documents#check_viewed'
+  resources :documents, only: [:destroy, :edit, :update]
+
+  scope 'admin' do
+    resources :filieres do
+      resources :semestres do
+        resources :blocs do
+          resources :matieres
+        end
+      end
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

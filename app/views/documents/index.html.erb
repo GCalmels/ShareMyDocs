@@ -1,0 +1,33 @@
+<% provide(:title, 'Documents') %>
+
+<div class="jumbotron text-align-right">
+	<div class="search-box">
+		<div class="input-group col-md-12">
+			<input type="text" id="search-input" class="search-query form-control" placeholder="Search">
+			<span class="input-group-btn">
+				<button class="btn btn-danger" type="submit">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</span>
+		</div>
+	</div>
+	<div class="search-filters">
+		<select class="form-control" id="search-filiere-select">
+			<% @filieres.each do |filiere| %>
+				<option value="<%= filiere.id %>" <%= 'selected' if filiere == @selected_filiere %>><%= filiere.nom %></option>
+			<% end %>
+		</select>
+		<select class="form-control" id="search-matiere-select">			
+			<%= render 'select_matiere_input' %>
+		</select>
+		<div class="document-types-filter">
+			<% @document_types.each do |document_type| %>
+				<label for="document_type_filter_<%= document_type.id %>"><%= document_type.nom %></label><input type="checkbox" name="document_type_filter" value="<%= document_type.id %>" id="document_type_filter_<%= document_type.id %>" class="checkbox-filters">
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<div id="documents">
+	<%= render 'documents' %>
+</div>

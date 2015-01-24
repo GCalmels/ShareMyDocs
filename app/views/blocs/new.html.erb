@@ -1,0 +1,19 @@
+<% provide(:title, 'Créer Bloc') %>
+
+<div class="container">
+	<div class="admin-index-container">
+		<h1>Créer un nouveau bloc</h1>
+
+		<div class="jumbotron admin-form">
+			<%= form_for(@bloc, url: filiere_semestre_blocs_path, method: :post) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<%= render 'fields', f: f %>
+
+			<div>
+				<%= f.submit "Créer bloc", class: "btn btn-lg btn-primary" %>
+				<%= link_to "Annuler", filiere_semestre_blocs_path(@filiere, @semestre), class: "btn btn-lg btn-default float-right" %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>

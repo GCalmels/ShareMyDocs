@@ -1,0 +1,29 @@
+<% provide(:title, 'Profile') %>
+
+<div class="columns">
+	<%= render "menu" %>
+
+	<div class="column three-fourths">
+		<div class="boxed-group">
+			<h3>Your profile</h3>
+			<div class="boxed-group-inner clearfix">
+				<div class="column two-thirds">
+					<table>
+						<tr>
+							<td class="title">Login</td>
+							<td><%= current_user.login %></td>
+						</tr>
+						<tr>
+							<td class="title">Nombre de documents uploadés</td>
+							<td><%= current_user.documents.count %></td>
+						</tr>
+						<tr>
+							<td class="title">Nombre de documents vues</td>
+							<td><%= current_user.documents_viewed.count %></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<% provide(:title, @bloc.nom) %>
+
+<div class="container">
+	<div class="admin-index-container">
+	<h1><%= @bloc.nom %></h1>
+
+	<div>
+		<%= link_to 'Manager les matières', filiere_semestre_bloc_matieres_path(@filiere, @semestre, @bloc), class: "btn btn-lg btn-primary" %>
+		<%= link_to "Retour", filiere_semestre_blocs_path(@filiere, @semestre), class: "btn btn-lg btn-default float-right" %>
+	</div>
+</div>
+</div>
