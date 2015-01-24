@@ -2,10 +2,6 @@ class AdministrationController < ApplicationController
 	before_action :authenticate_user!
 	before_action :user_is_admin
 
-	def index
-
-	end
-
 	private
 
 	def user_is_admin

@@ -1,0 +1,20 @@
+<% provide(:title, 'Créer Matiere') %>
+
+<div class="container">
+	<div class="admin-index-container">
+
+		<h1>Créer une nouvelle matiere</h1>
+
+		<div class="jumbotron admin-form">
+			<%= form_for(@matiere, url: filiere_semestre_bloc_matieres_path, method: :post) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<%= render 'fields', f: f %>
+			
+			<div>
+				<%= f.submit "Créer matiere", class: "btn btn-lg btn-primary" %>
+				<%= link_to "Annuler", filiere_semestre_bloc_matieres_path(@filiere, @semestre, @bloc), class: "btn btn-lg btn-default float-right" %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>

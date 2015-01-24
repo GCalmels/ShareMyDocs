@@ -1,0 +1,15 @@
+<% provide :title, "Admin Matieres" %>
+
+<div class="container">
+	<div class="admin-index-container">
+		<h1>Management des matieres de <%= @filiere.nom %> - <%= @semestre.nom %> - <%= @bloc.nom %></h1>
+
+		<ul>
+			<%= render @matieres %>
+		</ul>
+		<div>
+		<%= link_to 'Créer nouvelle matiere', new_filiere_semestre_bloc_matiere_path(@filiere, @semestre, @bloc), class: "btn btn-lg btn-primary" %>
+			<%= link_to "Retour", filiere_semestre_bloc_path(@filiere, @semestre, @bloc), class: "btn btn-lg btn-default float-right" %>
+		</div>
+	</div>
+</div>

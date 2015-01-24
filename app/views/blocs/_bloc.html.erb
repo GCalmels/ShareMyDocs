@@ -1,0 +1,19 @@
+<li>
+	<a href="<%= filiere_semestre_bloc_path(@filiere, @semestre, bloc) %>">
+		<div class="admin-index-object-content display-inline-block">
+			<%= bloc.nom %>
+		</div>
+	</a>
+	<div class="display-inline-block float-right">
+		<%= link_to edit_filiere_semestre_bloc_path(@filiere, @semestre, bloc), title: "Edit #{bloc.nom}", rel: "nofollow", data: {method: "get"} do %>
+			<div class="admin-icon">
+				<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+			</div>
+		<% end %>
+		<%= link_to filiere_semestre_bloc_path(@filiere, @semestre, bloc), title: "Delete #{bloc.nom}", rel: "nofollow", data: {confirm: "Si vous supprimez cette filière, toutes les matieres et documents associés seront également supprimés.\nEtes vous sûre de vouloir supprimer le bloc #{bloc.nom} ?", method: "delete"} do %>
+			<div class="admin-icon">
+				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+			</div>
+		<% end %>
+	</div>	
+</li>

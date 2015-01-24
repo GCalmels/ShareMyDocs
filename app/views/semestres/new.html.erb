@@ -1,0 +1,19 @@
+<% provide(:title, 'Créer Semestre') %>
+
+<div class="container">
+	<div class="admin-index-container">
+		<h1>Créer un nouveau semestre</h1>
+
+		<div class="jumbotron admin-form">
+			<%= form_for(@semestre, url: filiere_semestres_path, method: :post) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<%= render 'fields', f: f %>
+
+			<div>
+				<%= f.submit "Créer semestre", class: "btn btn-large btn-primary " %>
+				<%= link_to "Annuler", filiere_semestres_path(@filiere), class: "btn btn-large btn-default  float-right" %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -674,3 +674,69 @@ textarea {
     margin-left: 20px;
   }
 }
+
+/* Administration Custom CSS
+-------------------------------------------------- */
+
+.admin-index-container {
+  margin-left: 20%;
+  margin-bottom: 20px;
+  width: 60%;
+  h1 {
+    border-bottom: solid 1px #CCC;
+    margin-bottom: 20px;
+  }
+}
+
+.admin-index-container ul {
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.admin-index-object-content {
+  border: solid 1px #CCC;
+  border-radius: 4px;
+  padding: 10px;
+  width: 94%;
+  font-size: 22px;
+  text-align: center;
+  background-color: #EEE;
+  color: grey;
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .admin-index-object-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 420px) {
+  .admin-index-object-content {
+    width: 82%;
+  }
+}
+
+.admin-index-object-content:hover{
+  background-color: #CCC;
+  color: black;
+}
+
+.float-right {
+  float: right;
+}
+
+.admin-icon {
+  font-size: 20px;
+}
+
+.admin-form {
+  label {
+    font-size: 20px;
+  }
+}
