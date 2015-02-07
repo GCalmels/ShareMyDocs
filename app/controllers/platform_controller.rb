@@ -11,7 +11,4 @@ class PlatformController < ApplicationController
 		@fa2 = Filiere.find_by(nom: "FA2").id
 		@fa3 = Filiere.find_by(nom: "FA3").id
 	end
-
-	def stats
-	end
 end

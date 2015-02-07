@@ -17,9 +17,6 @@
         <li class="<%= 'active' if params[:action] == 'new' && params[:controller] == 'documents' %>">
           <%= link_to "Upload", documents_new_path %>
         </li>
-        <li class="<%= 'active' if params[:action] == 'stats' %>">
-          <%= link_to "Statistics", stats_path %>
-        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">        
         <% if signed_in? %>

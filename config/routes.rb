@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     delete 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
   end
   root 'platform#home'
-  get 'stats', to: 'platform#stats'
 
   get 'documents', to: 'documents#index'
   get 'documents/new', to: 'documents#new'
